@@ -3,7 +3,7 @@ const path = require('path');
 const url = require('url');
 const fs = require('fs');
 
-const PORT = 5000;
+const PORT = 80;
 const DEBUG = true;
 
 const MIME = {

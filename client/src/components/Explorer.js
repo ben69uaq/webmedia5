@@ -33,7 +33,7 @@ export default class Explorer extends Component {
 	
 	handlePathChange(newPath) {
 		if (newPath !== this.state.path){
-			fetch('http://localhost:5000/' + newPath)
+			fetch('https://webmedia5.herokuapp.com/' + newPath)
 			.then((response) => response.json())
 			.then((response) => {
 			
