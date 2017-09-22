@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node server/src/server.js",
-    "build": "node server/src/server.js"
+    "start": "node server/server.js",
+    "build": "node server/server.js"
   }
 }

@@ -18,8 +18,6 @@ const MIME = {
 
 http.createServer(function (request, response) {
 	
-	console.log("START");
-	
 	response.setHeader('Access-Control-Allow-Origin', '*');
 	var parsedUrl = url.parse(request.url); // Parse url
 	
@@ -33,16 +31,14 @@ http.createServer(function (request, response) {
 	if(extention) { // Serve file
 		
 		if(MIME[extention]) { // File format supported
-			
-			console.log("1");
 	
 			switch(extention) { // Define file path
 				case '.json':
 				case '.mp3':
-					var root = '../data';
+					var root = 'data';
 					break;
 				default:
-					var root = '../client/build';
+					var root = 'client/build';
 					break;
 			}
 			
@@ -52,7 +48,7 @@ http.createServer(function (request, response) {
 				flag = false;
 				
 				fs.readFile(pathFile, (error, content) => {
-					if(DEBUG){ console.log('[server.js] Read file -> ' + pathFile) };
+					if(DEBUG){ console.log('[server.js] Read file -> ' + pathFile) }
 					
 					if (error) { // Error while reading file
 						response.writeHead(500);
@@ -66,13 +62,11 @@ http.createServer(function (request, response) {
 				});
 			}
 			else {
-				console.log("err1");
+				if(DEBUG){ console.log('[server.js] File not found : ' + pathFile) }
 			}
 		}
 	}
 	else { // Serve API
-	
-		console.log("2");
 		
 		var urlPath = parsedUrl.pathname.split('/'); // Parse url
 		urlPath.shift(); //Remove empty first value
@@ -80,13 +74,13 @@ http.createServer(function (request, response) {
 		switch(urlPath.shift().toLowerCase()) { // Define file path
 			case 'music':
 			case 'playlist':
-				var pathDir = '../data' + decodeURI(parsedUrl.pathname);
+				var pathDir = 'data' + decodeURI(parsedUrl.pathname);
 				
 				if(fs.existsSync(pathDir)) { // Directory exists
 					flag = false;
 					
 					fs.readdir(pathDir, (error, files) => {
-						if(DEBUG){ console.log('[server.js] Read folder -> ' + pathDir) };
+						if(DEBUG){ console.log('[server.js] Read folder -> ' + pathDir) }
 							
 						if (error) { // Error while reading directory
 							response.writeHead(500);
@@ -99,7 +93,7 @@ http.createServer(function (request, response) {
 					});
 				}
 				else {
-					console.log("err2");
+					if(DEBUG){ console.log('[server.js] Folder not found : ' + pathDir) }
 				}
 				break;
 		}
