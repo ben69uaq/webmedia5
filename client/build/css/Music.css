@@ -1,0 +1,29 @@
+/*
+ * Columns
+ */
+.Music .center {
+	height: 40px;
+	overflow: hidden;
+}
+.Music .right {
+	float: right;
+	margin-left: 10px;
+}
+
+/*
+ * Center
+ */
+.Music .info {
+}
+
+/*
+ * Right
+ */
+.Music .control_add {
+	font-size: 18px;
+	margin-top: 11px;
+}
+.Music .control_add:before {
+	content: '\f0a9';
+}
+ 
