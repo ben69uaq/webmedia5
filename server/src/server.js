@@ -3,7 +3,7 @@ const path = require('path');
 const url = require('url');
 const fs = require('fs');
 
-const PORT = 80;
+const PORT = 5000;
 const DEBUG = true;
 
 const MIME = {
@@ -97,6 +97,6 @@ http.createServer(function (request, response) {
 		response.writeHead(404);
 		response.end(http.STATUS_CODES[404]);
 	}
-}).listen(PORT);
+}).listen(process.env.PORT || PORT);
 
 console.log('[server.js] Server running on port: ' + PORT);
