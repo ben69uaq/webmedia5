@@ -99,4 +99,4 @@ http.createServer(function (request, response) {
 	}
 }).listen(process.env.PORT || PORT);
 
-console.log('[server.js] Server running on port: ' + PORT);
+console.log('[server.js] Server running on port: ' + process.env.PORT || PORT);
