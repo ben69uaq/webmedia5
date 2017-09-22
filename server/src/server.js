@@ -34,6 +34,8 @@ http.createServer(function (request, response) {
 		
 		if(MIME[extention]) { // File format supported
 			
+			console.log("1");
+	
 			switch(extention) { // Define file path
 				case '.json':
 				case '.mp3':
@@ -63,10 +65,15 @@ http.createServer(function (request, response) {
 					}
 				});
 			}
+			else {
+				console.log("err1");
+			}
 		}
 	}
 	else { // Serve API
 	
+		console.log("2");
+		
 		var urlPath = parsedUrl.pathname.split('/'); // Parse url
 		urlPath.shift(); //Remove empty first value
 		
@@ -90,6 +97,9 @@ http.createServer(function (request, response) {
 							response.end(JSON.stringify(files), 'utf-8');
 						}
 					});
+				}
+				else {
+					console.log("err2");
 				}
 				break;
 		}
