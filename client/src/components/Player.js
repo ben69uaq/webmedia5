@@ -6,7 +6,7 @@ export default class Player extends Component {
 		return (
 			<div className='Player item'>
 				<audio 
-					src={'http://localhost:5000/' + this.props.play.path}
+					src={'https://webmedia5.herokuapp.com/' + this.props.play.path}
 					preload='none'
 					onTimeUpdate={this.handleTimeUpdate}
 					onEnded={this.handleEnded}
