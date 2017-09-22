@@ -18,6 +18,8 @@ const MIME = {
 
 http.createServer(function (request, response) {
 	
+	console.log("START");
+	
 	response.setHeader('Access-Control-Allow-Origin', '*');
 	var parsedUrl = url.parse(request.url); // Parse url
 	
