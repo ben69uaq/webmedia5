@@ -34,8 +34,6 @@ export default class Explorer extends Component {
 	handlePathChange(newPath) {
 		if (newPath !== this.state.path){
 			
-			console.log(this.props.api);
-			
 			fetch(this.props.api + newPath)
 			.then((response) => response.json())
 			.then((response) => {
