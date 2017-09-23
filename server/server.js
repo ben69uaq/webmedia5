@@ -3,7 +3,9 @@ const path = require('path');
 const url = require('url');
 const fs = require('fs');
 
-const PORT = 5000;
+// PORT in dev environment : 5000 (host: http://localhost:5000)
+// PORT in prod is the Heroku port
+const PORT = process.env.PORT ? process.env.PORT : 5000;
 const DEBUG = true;
 
 const MIME = {
@@ -61,9 +63,6 @@ http.createServer(function (request, response) {
 					}
 				});
 			}
-			else {
-				if(DEBUG){ console.log('[server.js] File not found : ' + pathFile) }
-			}
 		}
 	}
 	else { // Serve API
@@ -92,9 +91,6 @@ http.createServer(function (request, response) {
 						}
 					});
 				}
-				else {
-					if(DEBUG){ console.log('[server.js] Folder not found : ' + pathDir) }
-				}
 				break;
 		}
 	}
@@ -103,6 +99,6 @@ http.createServer(function (request, response) {
 		response.writeHead(404);
 		response.end(http.STATUS_CODES[404]);
 	}
-}).listen(process.env.PORT || PORT);
+}).listen(PORT);
 
-console.log('[server.js] Server running on port: ' + process.env.PORT || PORT);
+console.log('[server.js] Server running on port: ' + PORT);

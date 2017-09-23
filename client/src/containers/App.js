@@ -5,10 +5,22 @@ import Explorer from '../components/Explorer'
 import PlayList from '../components/PlayList'
 import * as Actions from '../actions'
 
+// ROOT_API in dev environment : localhost:5000 (see server/server.js file)
+// ROOT_API in prod is the current url
+const ROOT_API = window.location.host === 'localhost:3000' ? 'http://localhost:5000/' : '/';
+
 const App = ({playlist, actions}) => (
 	<div className='App'>
-		<Explorer actions={actions} path='music' />
-		<PlayList actions={actions} playlist={playlist} />
+		<Explorer
+			path='music'
+			actions={actions}
+			api={ROOT_API}
+		/>
+		<PlayList
+			playlist={playlist}
+			actions={actions}
+			api={ROOT_API}
+		/>
 	</div>
 )
 

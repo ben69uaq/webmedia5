@@ -6,11 +6,11 @@ export default class Player extends Component {
 		return (
 			<div className='Player item'>
 				<audio 
-					src={'https://webmedia5.herokuapp.com/' + this.props.play.path}
+					src={this.props.api + this.props.play.path}
 					preload='none'
 					onTimeUpdate={this.handleTimeUpdate}
 					onEnded={this.handleEnded}
-					ref={(audio) => { this.audioElement = audio; }}
+					ref={(audio) => {this.audioElement = audio}}
 				>
 					<source type='audio/mp3' />
 				</audio>
@@ -54,11 +54,9 @@ export default class Player extends Component {
 	
 	componentWillReceiveProps(nextProps) {
 		if(nextProps.play.status === 'PLAY' && this.audioElement.paused) {
-			console.log('play');
 			this.audioElement.play();
 		}
 		if(nextProps.play.status !== 'PLAY' && !this.audioElement.paused) {
-			console.log('pause');
 			this.audioElement.pause();
 		}
 	}
@@ -79,8 +77,6 @@ export default class Player extends Component {
 		var duration = this.audioElement.duration;    // Durée totale
 		var time     = this.audioElement.currentTime; // Temps écoulé
 		var percent  = time / duration * 100;
-
-		//console.log(duration +' / '+time);
 		
 		this.progressBar.style.width = percent + '%';
 		this.mainCursor.style.marginLeft = percent + '%';

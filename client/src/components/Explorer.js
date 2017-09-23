@@ -33,7 +33,10 @@ export default class Explorer extends Component {
 	
 	handlePathChange(newPath) {
 		if (newPath !== this.state.path){
-			fetch('https://webmedia5.herokuapp.com/' + newPath)
+			
+			console.log(this.props.api);
+			
+			fetch(this.props.api + newPath)
 			.then((response) => response.json())
 			.then((response) => {
 			

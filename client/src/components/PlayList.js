@@ -11,6 +11,7 @@ export default class PlayList extends Component {
 							key={play.id}
 							play={play}
 							actions={this.props.actions}
+							api = {this.props.api}
 						/>
 					)}
 				</div>
