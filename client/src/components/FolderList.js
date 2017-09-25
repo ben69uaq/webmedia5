@@ -4,7 +4,7 @@ import Folder from './Folder'
 export default class FolderList extends Component {	
 	render() {
 		return (
-			<div className='FolderList'>
+			<div className='FolderList scroller'>
 				<div className='container'>
 					{(this.props.folderList).map((folder, index) =>
 						<Folder

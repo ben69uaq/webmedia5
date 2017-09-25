@@ -12,24 +12,15 @@ body,
 /*
  * Containers
  */
-.Explorer {
+.Explorer { /* Float component width sized */ 
 	float: left;
 	width: 66%;
 	max-width: 500px;
 	height: 100%;
 }
-.FolderList,
-.MusicList,
-.PlayList {
-	overflow-y: auto;
-	height: 100%;
-}
-.FolderList,
-.MusicList {
+.FolderList { /* Float component width sized */ 
 	float: left;
 	width: 50%;
-}
-.FolderList {
 	background-color: #ddd;
 }
 .MusicList {
@@ -46,6 +37,10 @@ body,
 	color: red;
 	cursor: pointer;
 	font-family: 'FontAwesome';
+}
+.scroller {
+	height: 100%;
+	overflow-y: auto;
 }
 .container {
 	margin: 10px;

@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
-import Player from './Player'
+import Play from './Play'
 
 export default class PlayList extends Component {	
 	render() {
 		return (
-			<div className='PlayList'>
+			<div className='PlayList scroller'>
 				<div className='container'>
 					{(this.props.playlist).map((play) =>
-						<Player
+						<Play
 							key={play.id}
 							play={play}
 							actions={this.props.actions}
-							api = {this.props.api}
+							api={this.props.api}
 						/>
 					)}
 				</div>

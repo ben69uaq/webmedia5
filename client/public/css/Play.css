@@ -1,0 +1,54 @@
+/*
+ * Play
+ */
+.Play .left{
+	float: left;
+}
+.Play .center {
+	height: 40px;
+	margin-left: 40px;
+	margin-right: 26px;
+	overflow: hidden;
+}
+.Play .right {
+	float: right;
+}
+
+/*
+ * Left
+ */
+.Play .control_play,
+.Play .control_pause {
+	font-size: 40px;
+}
+.Play .control_play:before {
+	content: '\f144';
+}
+.Play .control_pause:before {
+	content: '\f28b';
+}
+
+/*
+ * Center
+ */
+.Play .info {
+	margin: 4px 7px 0 7px;
+}
+
+/*
+ * Right
+ */
+.Play .control_close,
+.Play .control_settings {
+	font-size: 18px;
+}
+.Play .control_settings {
+	margin-top: 4px;
+}
+.Play .control_close:before {
+	content: '\f057';
+}
+.Play .control_settings:before {
+	content: '\f1de';
+}
+ 
