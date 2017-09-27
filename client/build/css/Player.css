@@ -1,41 +1,9 @@
 /*
- * Columns
+ * Player
  */
-.Player .left{
-	float: left;
-}
-.Player .center {
-	height: 40px;
-	margin-left: 40px;
-	margin-right: 26px;
-	overflow: hidden;
-}
-.Player .right {
-	float: right;
-}
-
-/*
- * Left
- */
-.Player .control_play,
-.Player .control_pause {
-	font-size: 40px;
-}
-.Player .control_play:before {
-	content: '\f144';
-}
-.Player .control_pause:before {
-	content: '\f28b';
-}
-
-/*
- * Center
- */
-.Player .info {
-	margin: 4px 7px 0 7px;
-}
 .Player .player_bar {
 	height: 13px;
+	cursor: pointer;
 	padding: 2px 9px;
 	overflow: hidden;
 }
@@ -50,7 +18,7 @@
 	border-radius: 3px;
 	background-color: #ddd;
 }
-.Player:hover .player_bar_total {
+.Play:hover .Player .player_bar_total {
 	height: 5px;
 	top: 4px
 }
@@ -71,24 +39,7 @@
 	background-color: red;
 	box-shadow: 0 0 2px rgba(0,0,0,0.3);
 }
-.Player:hover .player_cursor_main {
+.Play:hover .Player .player_cursor_main {
 	opacity: 1;
-}
-
-/*
- * Right
- */
-.Player .control_close,
-.Player .control_settings {
-	font-size: 18px;
-}
-.Player .control_settings {
-	margin-top: 4px;
-}
-.Player .control_close:before {
-	content: '\f057';
-}
-.Player .control_settings:before {
-	content: '\f1de';
 }
  

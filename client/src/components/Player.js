@@ -53,19 +53,12 @@ export default class Player extends Component {
 	}
 	
 	handleClickBar = (e) => {
-		if(!this.audioElement.readyState) {
-			this.audioElement.play();
-		}
-		
-		var width = this.progressBar.parentElement.offsetWidth; // Bar width
-		var delta = e.pageX - this.getLeftPosition(this.progressBar); // Click position on the bar
-		
-		delta = delta < 0 ? 0 : delta > width ? width : delta; // Delta has to be > 0 and < width
-		
-		this.audioElement.currentTime  = this.audioElement.duration * delta / width;
-		
-		if(!this.audioElement.readyState) {
-			this.audioElement.pause();
+		if(this.audioElement.readyState) {
+			var width = this.progressBar.parentElement.offsetWidth; // Bar width
+			var delta = e.pageX - this.getLeftPosition(this.progressBar); // Click position on the bar
+			
+			delta = delta < 0 ? 0 : delta > width ? width : delta; // Delta has to be > 0 and < width
+			this.audioElement.currentTime  = this.audioElement.duration * delta / width;
 		}
 	}
 	

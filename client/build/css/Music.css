@@ -19,11 +19,11 @@
 /*
  * Right
  */
-.Music .control_add {
+.Music .button_add {
 	font-size: 18px;
 	margin-top: 11px;
 }
-.Music .control_add:before {
+.Music .button_add:before {
 	content: '\f0a9';
 }
  

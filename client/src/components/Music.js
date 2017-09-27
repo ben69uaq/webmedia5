@@ -7,7 +7,7 @@ export default class Music extends Component {
 		return (
 			<div className='Music item'>
 				<div className='right'>
-					<div className='control control_add'
+					<div className='button button_add'
 						onClick={this.handleAddToPlaylist}
 					></div>
 				</div>

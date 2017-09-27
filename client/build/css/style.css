@@ -12,24 +12,14 @@ body,
 /*
  * Containers
  */
-.Explorer {
+.Explorer { /* Float component width sized */ 
 	float: left;
 	width: 66%;
 	max-width: 500px;
-	height: 100%;
 }
-.FolderList,
-.MusicList,
-.PlayList {
-	overflow-y: auto;
-	height: 100%;
-}
-.FolderList,
-.MusicList {
+.FolderList { /* Float component width sized */ 
 	float: left;
 	width: 50%;
-}
-.FolderList {
 	background-color: #ddd;
 }
 .MusicList {
@@ -42,16 +32,31 @@ body,
 /*
  * Util classes
  */
+.list {
+	height: 100%;
+}
+.controller {
+	height: 6%;
+}
 .control {
-	color: red;
-	cursor: pointer;
-	font-family: 'FontAwesome';
+	display: inline-block;
+    font-size: 3vh;
+    width: 3vh;
+    height: 3vh;
+    padding: 1vh;
+    margin: 1vh 5px 0 0;
+    border-radius: 3vh;
+	box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+.control:first-child {
+	margin-left: 10px;
+}
+.scroller {
+	height: 90%;
+	overflow-y: auto;
 }
 .container {
 	margin: 10px;
-}
-.controller {
-	position: fixed;
 }
 .item {
 	padding: 10px;
@@ -62,6 +67,11 @@ body,
 }
 .item:first-child {
 	margin-top: 0;
+}
+.logo {
+	font-size: 3vh;
+	padding: 2vh 0 0 10px;
+	font-weight: bold;
 }
 .artist, .title {
 	height: 20px;
@@ -74,11 +84,26 @@ body,
 }
 
 /*
- * Font
+ * Buttons
  */
 @font-face {
 	font-family: 'FontAwesome';
 	src: url('../font/fontawesome-webfont.woff');
 	font-weight: normal;
 	font-style: normal;
+}
+.button {
+	color: red;
+	cursor: pointer;
+	font-family: 'FontAwesome';
+}
+.button.control {
+	color: white;
+	background-color: red;
+}
+.button_add_all:before {
+	content: '\f090';
+}
+.button_remove_all:before {
+	content: '\f08b';
 }

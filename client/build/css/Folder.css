@@ -1,4 +1,7 @@
-.active {
+.FolderList .item {
+	cursor: pointer;
+}
+.FolderList .item.active {
 	color: white;
 	background-color: red;
 }

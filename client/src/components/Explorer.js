@@ -17,7 +17,7 @@ export default class Explorer extends Component {
 	
 	render() {
 		return (
-			<div className='Explorer'>
+			<div className='Explorer list'>
 				<FolderList
 					path={this.state.path} // Send path to folderList to determine active folder
 					folderList={this.state.folderList}

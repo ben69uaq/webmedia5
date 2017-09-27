@@ -17,14 +17,14 @@
 /*
  * Left
  */
-.Play .control_play,
-.Play .control_pause {
+.Play .button_play,
+.Play .button_pause {
 	font-size: 40px;
 }
-.Play .control_play:before {
+.Play .button_play:before {
 	content: '\f144';
 }
-.Play .control_pause:before {
+.Play .button_pause:before {
 	content: '\f28b';
 }
 
@@ -42,13 +42,13 @@
 .Play .control_settings {
 	font-size: 18px;
 }
-.Play .control_settings {
+.Play .button_settings {
 	margin-top: 4px;
 }
-.Play .control_close:before {
+.Play .button_close:before {
 	content: '\f057';
 }
-.Play .control_settings:before {
+.Play .button_settings:before {
 	content: '\f1de';
 }
  

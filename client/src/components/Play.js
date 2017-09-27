@@ -7,16 +7,16 @@ export default class Play extends Component {
 		return (
 			<div className='Play item'>
 				<div className='left'>
-					<div className={this.props.play.status==='PLAY' ? 'control control_pause' : 'control control_play'}
+					<div className={this.props.play.status==='PLAY' ? 'button button_pause' : 'button button_play'}
 						onClick={this.handleClickPlay}
 					></div>
 				</div>
 				{this.props.play.status !== 'PLAY' &&
 					<div className='right'>
-						<div className='control control_close'
+						<div className='button button_close'
 							onClick={this.handleClickDelete}
 						></div>
-						<div className='control control_settings'
+						<div className='button button_settings'
 							onClick={this.handleClickSettings}
 						></div>
 					</div>
