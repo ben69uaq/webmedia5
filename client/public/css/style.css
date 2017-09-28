@@ -9,17 +9,25 @@ body,
 	font-family: Helvetica;
 }
 
+table {
+	width: 100%;
+	height: 100%;
+	border-collapse: collapse;
+}
+td {
+	padding: 0;
+}
 /*
  * Containers
  */
-.Explorer { /* Float component width sized */ 
-	float: left;
+.Explorer {
 	width: 66%;
 	max-width: 500px;
 }
-.FolderList { /* Float component width sized */ 
-	float: left;
+.Explorer table td:first-child {
 	width: 50%;
+}
+.FolderList {
 	background-color: #ddd;
 }
 .MusicList {
@@ -32,12 +40,6 @@ body,
 /*
  * Util classes
  */
-.list {
-	height: 100%;
-}
-.controller {
-	height: 6%;
-}
 .control {
 	display: inline-block;
     font-size: 3vh;
@@ -50,13 +52,6 @@ body,
 }
 .control:first-child {
 	margin-left: 10px;
-}
-.scroller {
-	height: 90%;
-	overflow-y: auto;
-}
-.container {
-	margin: 10px;
 }
 .item {
 	padding: 10px;
@@ -75,16 +70,35 @@ body,
 }
 .artist, .title {
 	height: 20px;
-	text-overflow: ellipsis;
 	overflow: hidden;
-	white-space: nowrap;
 }
 .artist {
 	font-weight: bold;
 }
 
 /*
- * Buttons
+ * Panel
+ */
+.panel {
+	height: 100%;
+}
+.panel table tr:first-child {
+	height: 50px;
+}
+.panel .panel_top {
+	height: 30px;
+	margin: 10px;
+}
+.panel .panel_bottom {
+	height: 100%;
+	overflow-y: auto;
+}
+.panel .panel_container {
+	margin: 10px;
+}
+ 
+/*
+ * Button
  */
 @font-face {
 	font-family: 'FontAwesome';

@@ -11,16 +11,24 @@ const ROOT_API = window.location.host === 'localhost:3000' ? 'http://localhost:5
 
 const App = ({playlist, actions}) => (
 	<div className='App'>
-		<Explorer
-			path='music'
-			actions={actions}
-			api={ROOT_API}
-		/>
-		<PlayList
-			playlist={playlist}
-			actions={actions}
-			api={ROOT_API}
-		/>
+		<table>
+			<tr>
+				<td>
+					<Explorer
+						path='music'
+						actions={actions}
+						api={ROOT_API}
+					/>
+				</td>
+				<td>
+					<PlayList
+						playlist={playlist}
+						actions={actions}
+						api={ROOT_API}
+					/>
+				</td>
+			</tr>
+		</table>
 	</div>
 )
 
