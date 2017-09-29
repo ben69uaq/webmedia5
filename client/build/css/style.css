@@ -18,10 +18,10 @@ td {
 /*
  * Containers
  */
-.App table td:first-child {
+.App td:first-child {
 	width: 500px;
 }
-.Explorer table td:first-child {
+.Explorer td:first-child {
 	width: 250px;
 }
 .FolderList {
