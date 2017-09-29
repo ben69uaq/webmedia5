@@ -1,7 +1,7 @@
-.FolderList .item {
+.Folder.item {
 	cursor: pointer;
 }
-.FolderList .item.active {
+.Folder.item.active {
 	color: white;
 	background-color: red;
 }
@@ -9,15 +9,15 @@
 /*
  * Levels
  */
-.level2 {
+.Folder.level2 {
 	margin-left: 20px;
 }
-.level3 {
+.Folder.level3 {
 	margin-left: 40px;
 }
-.level4 {
+.Folder.level4 {
 	margin-left: 60px;
 }
-.level5 {
+.Folder.level5 {
 	margin-left: 80px;
 }

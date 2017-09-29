@@ -5,7 +5,7 @@ export default class FolderList extends Component {
 	render() {
 		return (
 			<div className='FolderList panel'>
-				<table>
+				<table><tbody>
 					<tr><td>
 						<div className='panel_top'>
 							<div className='logo'>
@@ -27,7 +27,7 @@ export default class FolderList extends Component {
 							</div>
 						</div>
 					</td></tr>
-				</table>
+				</tbody></table>
 			</div>
 		);
 	}

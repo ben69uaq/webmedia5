@@ -7,16 +7,16 @@ export default class Play extends Component {
 		return (
 			<div className='Play item'>
 				<div className='left'>
-					<div className={this.props.play.status==='PLAY' ? 'button button_pause' : 'button button_play'}
+					<div className={this.props.play.status==='PLAY' ? 'button big red button_pause' : 'button big red button_play'}
 						onClick={this.handleClickPlay}
 					></div>
 				</div>
 				{this.props.play.status !== 'PLAY' &&
 					<div className='right'>
-						<div className='button button_close'
-							onClick={this.handleClickDelete}
+						<div className='button small white red button_close'
+							onClick={this.handleClickRemove}
 						></div>
-						<div className='button button_settings'
+						<div className='button small white button_settings'
 							onClick={this.handleClickSettings}
 						></div>
 					</div>
@@ -40,8 +40,8 @@ export default class Play extends Component {
 		this.props.actions.clickPlay(this.props.play.id);
 	}
 	
-	handleClickDelete = () => {
-		this.props.actions.deleteFromPlaylist(this.props.play.id);
+	handleClickRemove = () => {
+		this.props.actions.removeFromPlaylist(this.props.play.id);
 	}
 	
 	handleClickSettings = () => {

@@ -5,11 +5,11 @@ export default class MusicList extends Component {
 	render() {
 		return (
 			<div className='MusicList panel'>
-				<table>
+				<table><tbody>
 					<tr><td>
 						<div className='panel_top'>
-							<div className='control button button_add_all'
-								onClick={this.handleAddAllToPlaylist}
+							<div className='button horizontal big white button_add_all'
+								onClick={this.handleAddAll}
 							></div>
 						</div>
 					</td></tr>
@@ -26,12 +26,12 @@ export default class MusicList extends Component {
 							</div>
 						</div>
 					</td></tr>
-				</table>
+				</tbody></table>
 			</div>
 		);
 	}
 	
-	handleAddAllToPlaylist = () => {
+	handleAddAll = () => {
 		this.props.musicList.forEach((music) =>
 			this.props.actions.addToPlaylist(music)
 		)

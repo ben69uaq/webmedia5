@@ -10,26 +10,21 @@ import * as Actions from '../actions'
 const ROOT_API = window.location.host === 'localhost:3000' ? 'http://localhost:5000/' : '/';
 
 const App = ({playlist, actions}) => (
-	<div className='App'>
-		<table>
-			<tr>
-				<td>
-					<Explorer
-						path='music'
-						actions={actions}
-						api={ROOT_API}
-					/>
-				</td>
-				<td>
-					<PlayList
-						playlist={playlist}
-						actions={actions}
-						api={ROOT_API}
-					/>
-				</td>
-			</tr>
-		</table>
-	</div>
+	<table className='App'><tbody>
+		<tr><td>
+			<Explorer
+				path='music'
+				actions={actions}
+				api={ROOT_API}
+			/>
+		</td><td>
+			<PlayList
+				playlist={playlist}
+				actions={actions}
+				api={ROOT_API}
+			/>
+		</td></tr>
+	</tbody></table>
 )
 
 const mapStateToProps = state => ({

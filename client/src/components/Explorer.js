@@ -18,23 +18,20 @@ export default class Explorer extends Component {
 	render() {
 		return (
 			<div className='Explorer panel'>
-				<table>
-					<tr>
-						<td>
-							<FolderList
-								path={this.state.path} // Send path to folderList to determine active folder
-								folderList={this.state.folderList}
-								onPathChange={this.handlePathChange.bind(this)}
-							/>
-						</td>
-						<td>
-							<MusicList
-								musicList={this.state.musicList}
-								actions={this.props.actions}
-							/>
-						</td>
-					</tr>
-				</table>
+				<table><tbody>
+					<tr><td>
+						<FolderList
+							path={this.state.path} // Send path to folderList to determine active folder
+							folderList={this.state.folderList}
+							onPathChange={this.handlePathChange.bind(this)}
+						/>
+					</td><td>
+						<MusicList
+							musicList={this.state.musicList}
+							actions={this.props.actions}
+						/>
+					</td></tr>
+				</tbody></table>
 			</div>
 		)
 	}

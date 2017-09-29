@@ -5,11 +5,11 @@ export default class PlayList extends Component {
 	render() {
 		return (
 			<div className='PlayList panel'>
-				<table>
+				<table><tbody>
 					<tr><td>
 						<div className='panel_top'>
-							<div className='control button button_remove_all'
-								onClick={this.handleAddAllToPlaylist}
+							<div className='button horizontal big white button_remove_all'
+								onClick={this.handleClickRemoveAll}
 							></div>
 						</div>
 					</td></tr>
@@ -27,8 +27,12 @@ export default class PlayList extends Component {
 							</div>
 						</div>
 					</td></tr>
-				</table>
+				</tbody></table>
 			</div>
 		);
+	}
+	
+	handleClickRemoveAll = () => {
+		this.props.actions.removeAllFromPlaylist();
 	}
 }

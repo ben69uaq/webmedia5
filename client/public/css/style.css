@@ -1,14 +1,12 @@
 html,
 body,
-#root,
-.App {
+#root {
 	margin: 0;
 	width: 100%;
 	height: 100%;
 	font-size: 15px;
 	font-family: Helvetica;
 }
-
 table {
 	width: 100%;
 	height: 100%;
@@ -20,12 +18,11 @@ td {
 /*
  * Containers
  */
-.Explorer {
-	width: 66%;
-	max-width: 500px;
+.App table td:first-child {
+	width: 500px;
 }
 .Explorer table td:first-child {
-	width: 50%;
+	width: 250px;
 }
 .FolderList {
 	background-color: #ddd;
@@ -40,18 +37,8 @@ td {
 /*
  * Util classes
  */
-.control {
-	display: inline-block;
-    font-size: 3vh;
-    width: 3vh;
-    height: 3vh;
-    padding: 1vh;
-    margin: 1vh 5px 0 0;
-    border-radius: 3vh;
-	box-shadow: 0 0 5px rgba(0,0,0,0.3);
-}
-.control:first-child {
-	margin-left: 10px;
+.logo {
+	font-size: 20px;
 }
 .item {
 	padding: 10px;
@@ -59,14 +46,6 @@ td {
 	border-radius: 3px;
 	background-color: white;
 	box-shadow: 0 0 5px rgba(0,0,0,0.3);
-}
-.item:first-child {
-	margin-top: 0;
-}
-.logo {
-	font-size: 3vh;
-	padding: 2vh 0 0 10px;
-	font-weight: bold;
 }
 .artist, .title {
 	height: 20px;
@@ -83,10 +62,10 @@ td {
 	height: 100%;
 }
 .panel table tr:first-child {
-	height: 50px;
+	height: 60px;
 }
 .panel .panel_top {
-	height: 30px;
+	height: 40px;
 	margin: 10px;
 }
 .panel .panel_bottom {
@@ -94,7 +73,7 @@ td {
 	overflow-y: auto;
 }
 .panel .panel_container {
-	margin: 10px;
+	margin:  0 10px 10px 10px;
 }
  
 /*
@@ -107,17 +86,56 @@ td {
 	font-style: normal;
 }
 .button {
-	color: red;
 	cursor: pointer;
 	font-family: 'FontAwesome';
 }
-.button.control {
+.button.small {
+    font-size: 18px;
+    border-radius: 9px;
+    line-height: 16px;
+}
+.button.big {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    padding: 8px;
+    border-radius: 20px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.6);
+}
+.button.red {
 	color: white;
 	background-color: red;
 }
-.button_add_all:before {
+.button.white {
+	color: red;
+	background-color: white;
+}
+.button.horizontal {
+	display: inline-block;
+    margin-left: 5px;
+}
+.button.horizontal:first-child {
+	margin-left:0;
+}
+
+.button.button_play:before {
+	content: '\f04b';
+}
+.button.button_pause:before {
+	content: '\f04c';
+}
+.button.button_close:before {
+	content: '\f057';
+}
+.button.button_settings:before {
+	content: '\f1de';
+}
+.button.button_add:before {
+	content: '\f0a9';
+}
+.button.button_add_all:before {
 	content: '\f090';
 }
-.button_remove_all:before {
+.button.button_remove_all:before {
 	content: '\f08b';
 }

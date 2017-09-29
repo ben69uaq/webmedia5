@@ -1,25 +1,30 @@
 html,
 body,
-#root,
-.App {
+#root {
 	margin: 0;
 	width: 100%;
 	height: 100%;
 	font-size: 15px;
 	font-family: Helvetica;
 }
-
+table {
+	width: 100%;
+	height: 100%;
+	border-collapse: collapse;
+}
+td {
+	padding: 0;
+}
 /*
  * Containers
  */
-.Explorer { /* Float component width sized */ 
-	float: left;
-	width: 66%;
-	max-width: 500px;
+.App table td:first-child {
+	width: 500px;
 }
-.FolderList { /* Float component width sized */ 
-	float: left;
-	width: 50%;
+.Explorer table td:first-child {
+	width: 250px;
+}
+.FolderList {
 	background-color: #ddd;
 }
 .MusicList {
@@ -32,31 +37,8 @@ body,
 /*
  * Util classes
  */
-.list {
-	height: 100%;
-}
-.controller {
-	height: 6%;
-}
-.control {
-	display: inline-block;
-    font-size: 3vh;
-    width: 3vh;
-    height: 3vh;
-    padding: 1vh;
-    margin: 1vh 5px 0 0;
-    border-radius: 3vh;
-	box-shadow: 0 0 5px rgba(0,0,0,0.3);
-}
-.control:first-child {
-	margin-left: 10px;
-}
-.scroller {
-	height: 90%;
-	overflow-y: auto;
-}
-.container {
-	margin: 10px;
+.logo {
+	font-size: 20px;
 }
 .item {
 	padding: 10px;
@@ -65,26 +47,37 @@ body,
 	background-color: white;
 	box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
-.item:first-child {
-	margin-top: 0;
-}
-.logo {
-	font-size: 3vh;
-	padding: 2vh 0 0 10px;
-	font-weight: bold;
-}
 .artist, .title {
 	height: 20px;
-	text-overflow: ellipsis;
 	overflow: hidden;
-	white-space: nowrap;
 }
 .artist {
 	font-weight: bold;
 }
 
 /*
- * Buttons
+ * Panel
+ */
+.panel {
+	height: 100%;
+}
+.panel table tr:first-child {
+	height: 60px;
+}
+.panel .panel_top {
+	height: 40px;
+	margin: 10px;
+}
+.panel .panel_bottom {
+	height: 100%;
+	overflow-y: auto;
+}
+.panel .panel_container {
+	margin:  0 10px 10px 10px;
+}
+ 
+/*
+ * Button
  */
 @font-face {
 	font-family: 'FontAwesome';
@@ -93,17 +86,56 @@ body,
 	font-style: normal;
 }
 .button {
-	color: red;
 	cursor: pointer;
 	font-family: 'FontAwesome';
 }
-.button.control {
+.button.small {
+    font-size: 18px;
+    border-radius: 9px;
+    line-height: 16px;
+}
+.button.big {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    padding: 8px;
+    border-radius: 20px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.6);
+}
+.button.red {
 	color: white;
 	background-color: red;
 }
-.button_add_all:before {
+.button.white {
+	color: red;
+	background-color: white;
+}
+.button.horizontal {
+	display: inline-block;
+    margin-left: 5px;
+}
+.button.horizontal:first-child {
+	margin-left:0;
+}
+
+.button.button_play:before {
+	content: '\f04b';
+}
+.button.button_pause:before {
+	content: '\f04c';
+}
+.button.button_close:before {
+	content: '\f057';
+}
+.button.button_settings:before {
+	content: '\f1de';
+}
+.button.button_add:before {
+	content: '\f0a9';
+}
+.button.button_add_all:before {
 	content: '\f090';
 }
-.button_remove_all:before {
+.button.button_remove_all:before {
 	content: '\f08b';
 }

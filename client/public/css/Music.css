@@ -20,10 +20,6 @@
  * Right
  */
 .Music .button_add {
-	font-size: 18px;
 	margin-top: 11px;
-}
-.Music .button_add:before {
-	content: '\f0a9';
 }
  

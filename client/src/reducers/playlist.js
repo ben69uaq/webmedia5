@@ -9,9 +9,13 @@ const playlist = (state = [], action) => {
 					status: ''
 				}
 			]
-		case 'DELETE_FROM_PLAYLIST':
+		case 'REMOVE_FROM_PLAYLIST':
 			return state.filter(play =>
 				play.id !== action.id
+			)
+		case 'REMOVE_ALL_FROM_PLAYLIST':
+			return state.filter(play =>
+				play.status === 'PLAY'
 			)
 		case 'CLICK_PLAY':
 			var newState = [];
