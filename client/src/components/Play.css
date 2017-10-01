@@ -6,7 +6,7 @@
 }
 .Play .center {
 	height: 40px;
-	margin-left: 40px;
+	margin-left: 46px;
 	margin-right: 26px;
 	overflow: hidden;
 }
@@ -17,13 +17,6 @@
 /*
  * Center
  */
-.Play .button.button.button_play {
-    padding: 8px 4px 8px 12px;
-}
-.Play .button.button.button_pause {
-	font-size: 20px;
-    padding: 10px 5px 6px 11px;
-}
 .Play .info {
 	margin: 4px 7px 0 7px;
 }

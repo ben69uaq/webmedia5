@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Music from './Music'
+import Music from '../components/Music'
 
 export default class MusicList extends Component {	
 	render() {

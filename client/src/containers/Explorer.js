@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import FolderList from './FolderList'
-import MusicList from './MusicList'
+import FolderList from '../lists/FolderList'
+import MusicList from '../lists/MusicList'
 
 export default class Explorer extends Component {
 	constructor(props) {

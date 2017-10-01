@@ -47,7 +47,7 @@ td {
 	background-color: white;
 	box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
-.artist, .title {
+.info {
 	height: 20px;
 	overflow: hidden;
 }
@@ -80,27 +80,25 @@ td {
  * Button
  */
 @font-face {
-	font-family: 'FontAwesome';
-	src: url('../font/fontawesome-webfont.woff');
+	font-family: 'Material';
+	src: url('./MaterialIcons-Regular.woff');
 	font-weight: normal;
 	font-style: normal;
 }
 .button {
 	cursor: pointer;
-	font-family: 'FontAwesome';
+	font-family: 'Material';
+	box-shadow: 0 0 5px rgba(0,0,0,0.6);
 }
 .button.small {
-    font-size: 18px;
-    border-radius: 9px;
-    line-height: 16px;
+	font-size: 16px;
+    padding: 2px;
+    border-radius: 10px;
 }
 .button.big {
-    font-size: 24px;
-    width: 24px;
-    height: 24px;
-    padding: 8px;
+	font-size: 28px;
+    padding: 6px;
     border-radius: 20px;
-	box-shadow: 0 0 5px rgba(0,0,0,0.6);
 }
 .button.red {
 	color: white;
@@ -119,23 +117,23 @@ td {
 }
 
 .button.button_play:before {
-	content: '\f04b';
+	content: '\e037';
 }
 .button.button_pause:before {
-	content: '\f04c';
+	content: '\e034';
 }
 .button.button_close:before {
-	content: '\f057';
+	content: '\e5cd';
 }
 .button.button_settings:before {
-	content: '\f1de';
+	content: '\e429';
 }
 .button.button_add:before {
-	content: '\f0a9';
+	content: '\e5c8';
 }
 .button.button_add_all:before {
-	content: '\f090';
+	content: '\e03b';
 }
 .button.button_remove_all:before {
-	content: '\f08b';
+	content: '\e92b';
 }

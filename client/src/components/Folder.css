@@ -1,0 +1,30 @@
+.Folder .arrow {
+    float: left;
+    margin-top: 4px;
+    font-size: 24px;
+    font-family: 'Material';
+}
+.Folder .arrow:before {
+	content: '\e5da';
+}
+.Folder .item {
+	overflow: hidden;
+	cursor: pointer;
+}
+.Folder .item.active {
+	color: white;
+	background-color: red;
+}
+
+/*
+ * Levels
+ */
+.Folder.level3 {
+	margin-left: 24px;
+}
+.Folder.level4 {
+	margin-left: 48px;
+}
+.Folder.level5 {
+	margin-left: 72px;
+}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './Music.css'
 
 export default class Music extends Component {  	
 	render() {
@@ -7,14 +8,16 @@ export default class Music extends Component {
 		return (
 			<div className='Music item'>
 				<div className='right'>
-					<div className='button small white button_add'
+					<div className='button small red button_add'
 						onClick={this.handleAddToPlaylist}
 					></div>
 				</div>
 				<div className='center'>
 					<div className='info'>
-						<div className='artist'>{splittedName[0]}</div>
-						{splittedName.length > 1 && <div className='title'>{splittedName[1]}</div>}
+						<span className='artist'>{splittedName[0]}</span>
+					</div>
+					<div className='info'>
+						{splittedName.length > 1 && <span className='title'>{splittedName[1]}</span>}
 					</div>
 				</div>
 			</div>

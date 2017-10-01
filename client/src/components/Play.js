@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Player from './Player'
+import './Play.css'
 
 export default class Play extends Component {	
 	render() {
@@ -7,16 +8,16 @@ export default class Play extends Component {
 		return (
 			<div className='Play item'>
 				<div className='left'>
-					<div className={this.props.play.status==='PLAY' ? 'button big red button_pause' : 'button big red button_play'}
+					<div className={'button big red ' + (this.props.play.status==='PLAY'?'button_pause':'button big red button_play')}
 						onClick={this.handleClickPlay}
 					></div>
 				</div>
 				{this.props.play.status !== 'PLAY' &&
 					<div className='right'>
-						<div className='button small white red button_close'
+						<div className='button small red button_close'
 							onClick={this.handleClickRemove}
 						></div>
-						<div className='button small white button_settings'
+						<div className='button small red button_settings'
 							onClick={this.handleClickSettings}
 						></div>
 					</div>

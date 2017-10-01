@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Folder from './Folder'
+import Folder from '../components/Folder'
 
 export default class FolderList extends Component {	
 	render() {

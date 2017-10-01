@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Play from './Play'
+import Play from '../components/Play'
 
 export default class PlayList extends Component {	
 	render() {

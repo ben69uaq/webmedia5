@@ -1,8 +1,8 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import Explorer from '../components/Explorer'
-import PlayList from '../components/PlayList'
+import Explorer from './Explorer'
+import PlayList from '../lists/PlayList'
 import * as Actions from '../actions'
 
 // ROOT_API in dev environment : localhost:5000 (see server/server.js file)
