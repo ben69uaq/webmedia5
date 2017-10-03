@@ -19,6 +19,7 @@
  */
 .Play .info {
 	margin: 4px 7px 0 7px;
+	cursor: grab;
 }
 
 /*

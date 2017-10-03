@@ -15,6 +15,7 @@ table {
 td {
 	padding: 0;
 }
+
 /*
  * Containers
  */
@@ -24,14 +25,15 @@ td {
 .Explorer td:first-child {
 	width: 250px;
 }
-.FolderList {
+.FolderList,
+.PlayList {
 	background-color: #ddd;
 }
 .MusicList {
 	background-color: #eee;
 }
-.PlayList {
-	background-color: #ddd;
+.MusicList .panel_top {
+	text-align: right;
 }
 
 /*

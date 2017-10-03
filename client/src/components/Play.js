@@ -38,7 +38,7 @@ export default class Play extends Component {
 	}
 	
 	handleClickPlay = () => {
-		this.props.actions.clickPlay(this.props.play.id);
+		this.props.actions.play(this.props.play.id);
 	}
 	
 	handleClickRemove = () => {

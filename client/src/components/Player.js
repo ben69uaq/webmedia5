@@ -44,7 +44,7 @@ export default class Player extends Component {
 	}
 	
 	handleEnded = () => {
-		this.props.actions.clickPlay(this.props.play.id);
+		this.props.actions.next();
 	}
 	
 	handleTimeUpdate = () => {

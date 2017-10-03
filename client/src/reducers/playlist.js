@@ -17,14 +17,29 @@ const playlist = (state = [], action) => {
 			return state.filter(play =>
 				play.status === 'PLAY'
 			)
-		case 'CLICK_PLAY':
+		case 'PLAY':
 			var newState = [];
-			state.forEach((play, index) => {
+			state.forEach((play) => {
 				if(play.id === action.id && play.status !== 'PLAY') {
 					play.status = 'PLAY';
 				}
 				else if(play.status === 'PLAY') {
 					play.status = '';
+				}
+				newState.push(play);
+			});
+			return newState
+		case 'NEXT':
+			var next = false;
+			var newState = [];
+			state.forEach((play, index) => {
+				if(next) {
+					play.status = 'PLAY';
+					next = false;
+				}
+				else if(play.status === 'PLAY') {
+					play.status = '';
+					next = true;
 				}
 				newState.push(play);
 			});
