@@ -39,7 +39,7 @@
 	background-color: red;
 	box-shadow: 0 0 2px rgba(0,0,0,0.3);
 }
-.Play:hover .Player .player_cursor_main {
+.Player:hover .player_bar  .player_cursor_main {
 	opacity: 1;
 }
  

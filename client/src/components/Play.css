@@ -1,6 +1,9 @@
 /*
  * Play
  */
+.Play.active{
+	
+}
 .Play .left{
 	float: left;
 }

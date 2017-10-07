@@ -6,7 +6,12 @@ export default class Play extends Component {
 	render() {
 		var splittedName = this.props.play.path.split('/').pop().split('.')[0].split('-');
 		return (
-			<div className='Play item'>
+			<div
+				className='Play item'
+				draggable='true'
+				onDragStart={this.handleDragStart}
+				onDragEnd={this.handleDragEnd}
+			>
 				<div className='left'>
 					<div className={'button big red ' + (this.props.play.status==='PLAY'?'button_pause':'button big red button_play')}
 						onClick={this.handleClickPlay}
@@ -46,5 +51,13 @@ export default class Play extends Component {
 	}
 	
 	handleClickSettings = () => {
+	}
+	
+	handleDragStart = (e) => {
+		var dragEl = e.target;
+		var nextEl = dragEl.nextSibling;
+	}
+	
+	handleDragEnd = () => {
 	}
 }
