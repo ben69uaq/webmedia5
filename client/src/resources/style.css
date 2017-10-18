@@ -50,7 +50,8 @@ td {
 	box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
 .info {
-	height: 20px;
+	height: 18px;
+	margin-bottom: 2px;
 	overflow: hidden;
 }
 .artist {
@@ -118,6 +119,9 @@ td {
 	margin-left:0;
 }
 
+/*
+ * Button icons
+ */
 .button.button_play:before {
 	content: '\e037';
 }

@@ -11,9 +11,10 @@ export default class Play extends Component {
 				draggable='true'
 				onDragStart={this.handleDragStart}
 				onDragEnd={this.handleDragEnd}
+				onDrag={this.handleDrag}
 			>
 				<div className='left'>
-					<div className={'button big red ' + (this.props.play.status==='PLAY'?'button_pause':'button big red button_play')}
+					<div className={'button big red ' + (this.props.play.status==='PLAY'?'button_pause':'button_play')}
 						onClick={this.handleClickPlay}
 					></div>
 				</div>
@@ -54,10 +55,23 @@ export default class Play extends Component {
 	}
 	
 	handleDragStart = (e) => {
-		var dragEl = e.target;
-		var nextEl = dragEl.nextSibling;
+		this.currentPosition = Math.floor(( e.clientY + this.props.scrollElement.scrollTop - 68 ) / 65);
 	}
 	
 	handleDragEnd = () => {
+		this.currentPosition = null;
+	}
+	
+	handleDrag = (e) => {
+		var lastPosition = this.props.playCount - 1;
+		if(e.clientY) {
+			var newPosition = Math.floor(( e.clientY + this.props.scrollElement.scrollTop - 68 ) / 65);
+			newPosition = newPosition < 0 ? 0 : newPosition > lastPosition ? lastPosition : newPosition;
+			
+			if(newPosition !== this.currentPosition) {
+				this.props.actions.sort( this.currentPosition, newPosition );
+				this.currentPosition = newPosition;
+			}
+		}
 	}
 }

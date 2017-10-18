@@ -14,12 +14,17 @@ export default class PlayList extends Component {
 						</div>
 					</td></tr>
 					<tr><td>
-						<div className='panel_bottom'>
-							<div className='panel_container'>
+						<div
+							className='panel_bottom'
+							ref={(div) => {this.scrollElement = div}}
+						>
+							<div className='panel_container' >
 								{(this.props.playlist).map((play) =>
 									<Play
 										key={play.id}
 										play={play}
+										scrollElement={this.scrollElement}
+										playCount={this.props.playlist.length}
 										actions={this.props.actions}
 										api={this.props.api}
 									/>

@@ -1,4 +1,5 @@
 const playlist = (state = [], action) => {
+	let newState = [];
 	switch (action.type) {
 		case 'ADD_TO_PLAYLIST':
 			return [
@@ -17,8 +18,11 @@ const playlist = (state = [], action) => {
 			return state.filter(play =>
 				play.status === 'PLAY'
 			)
+		case 'SORT':
+			newState = state.slice();
+			newState.splice(action.newIndex, 0, newState.splice(action.oldIndex, 1)[0]);
+			return newState;
 		case 'PLAY':
-			var newState = [];
 			state.forEach((play) => {
 				if(play.id === action.id && play.status !== 'PLAY') {
 					play.status = 'PLAY';
@@ -30,8 +34,7 @@ const playlist = (state = [], action) => {
 			});
 			return newState
 		case 'NEXT':
-			var next = false;
-			var newState = [];
+			let next = false;
 			state.forEach((play, index) => {
 				if(next) {
 					play.status = 'PLAY';
