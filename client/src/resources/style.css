@@ -7,33 +7,57 @@ body,
 	font-size: 15px;
 	font-family: Helvetica;
 }
-table {
-	width: 100%;
-	height: 100%;
-	border-collapse: collapse;
-}
-td {
-	padding: 0;
-}
 
 /*
  * Containers
  */
-.App td:first-child {
+.App {
+	height: 100%;
+	width: 100%;
+	min-width: 700px;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+.Explorer {
+	float: left;
 	width: 500px;
 }
-.Explorer td:first-child {
+.FolderList {
+	float: left;
 	width: 250px;
-}
-.FolderList,
-.PlayList {
 	background-color: #ddd;
 }
 .MusicList {
 	background-color: #eee;
 }
-.MusicList .panel_top {
-	text-align: right;
+.MusicList .header .button {
+	float: right;
+}
+.PlayList {
+	background-color: #ddd;
+}
+/*
+ * Columns
+ */
+.col {
+	height: 100%;
+}
+.col .header {
+	display: flex;
+	height: 40px;
+	padding: 10px;
+}
+.col .body {
+	display: flex;
+	box-sizing: border-box;
+	height: 100vh;
+    margin-top: -60px;
+    padding-top: 60px;
+}
+.col .container {
+	width: 100%;
+	padding: 0 10px;
+	overflow-y: auto;
 }
 
 /*
@@ -44,39 +68,18 @@ td {
 }
 .item {
 	padding: 10px;
-	margin-top: 5px;
+	margin-bottom: 5px;
 	border-radius: 3px;
 	background-color: white;
 	box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
-.info {
+.item .info {
 	height: 18px;
 	margin-bottom: 2px;
 	overflow: hidden;
 }
-.artist {
+.item .artist {
 	font-weight: bold;
-}
-
-/*
- * Panel
- */
-.panel {
-	height: 100%;
-}
-.panel table tr:first-child {
-	height: 60px;
-}
-.panel .panel_top {
-	height: 40px;
-	margin: 10px;
-}
-.panel .panel_bottom {
-	height: 100%;
-	overflow-y: auto;
-}
-.panel .panel_container {
-	margin:  0 10px 10px 10px;
 }
  
 /*
@@ -95,11 +98,13 @@ td {
 }
 .button.small {
 	font-size: 16px;
+	line-height: 16px;
     padding: 2px;
     border-radius: 10px;
 }
 .button.big {
 	font-size: 28px;
+	line-height: 28px;
     padding: 6px;
     border-radius: 20px;
 }

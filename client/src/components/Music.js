@@ -6,11 +6,12 @@ export default class Music extends Component {
 		var splittedName = this.props.path.split('/').pop().split('.')[0].split('-');
 	
 		return (
-			<div className='Music item'>
+			<div
+				className='Music item'
+				onClick={this.handleAddToPlaylist}
+			>
 				<div className='right'>
-					<div className='button small red button_add'
-						onClick={this.handleAddToPlaylist}
-					></div>
+					<div className='button small red button_add'></div>
 				</div>
 				<div className='center'>
 					<div className='info'>

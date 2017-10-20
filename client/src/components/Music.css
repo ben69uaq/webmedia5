@@ -1,6 +1,9 @@
 /*
- * Columns
+ * Music
  */
+.Music.item {
+	cursor: pointer;
+}
 .Music .center {
 	height: 40px;
 	overflow: hidden;
@@ -9,16 +12,6 @@
 	float: right;
 	margin-left: 10px;
 }
-
-/*
- * Center
- */
-.Music .info {
-}
-
-/*
- * Right
- */
 .Music .button_add {
 	margin-top: 11px;
 }

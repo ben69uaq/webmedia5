@@ -10,8 +10,9 @@ export default class Play extends Component {
 				className='Play item'
 				draggable='true'
 				onDragStart={this.handleDragStart}
-				onDragEnd={this.handleDragEnd}
-				onDrag={this.handleDrag}
+				//onDragEnd={this.handleDragEnd}
+				onDragEnter={this.handleDragEnter}
+				//onDrag={this.handleDrag}
 			>
 				<div className='left'>
 					<div className={'button big red ' + (this.props.play.status==='PLAY'?'button_pause':'button_play')}
@@ -55,23 +56,14 @@ export default class Play extends Component {
 	}
 	
 	handleDragStart = (e) => {
-		this.currentPosition = Math.floor(( e.clientY + this.props.scrollElement.scrollTop - 68 ) / 65);
+		window.draggedId = this.props.play.id;
+		e.dataTransfer.setData('id','');
 	}
 	
-	handleDragEnd = () => {
-		this.currentPosition = null;
-	}
-	
-	handleDrag = (e) => {
-		var lastPosition = this.props.playCount - 1;
-		if(e.clientY) {
-			var newPosition = Math.floor(( e.clientY + this.props.scrollElement.scrollTop - 68 ) / 65);
-			newPosition = newPosition < 0 ? 0 : newPosition > lastPosition ? lastPosition : newPosition;
-			
-			if(newPosition !== this.currentPosition) {
-				this.props.actions.sort( this.currentPosition, newPosition );
-				this.currentPosition = newPosition;
-			}
+	handleDragEnter = () => {
+		if (window.draggedId !== this.props.play.id) {
+			console.log('dragenter : ' + window.draggedId + ' - ' + this.props.play.id);
+			this.props.actions.sort( window.draggedId, this.props.play.id );
 		}
 	}
 }

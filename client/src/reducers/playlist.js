@@ -1,5 +1,4 @@
 const playlist = (state = [], action) => {
-	let newState = [];
 	switch (action.type) {
 		case 'ADD_TO_PLAYLIST':
 			return [
@@ -10,43 +9,56 @@ const playlist = (state = [], action) => {
 					status: ''
 				}
 			]
+			
 		case 'REMOVE_FROM_PLAYLIST':
 			return state.filter(play =>
 				play.id !== action.id
 			)
+			
 		case 'REMOVE_ALL_FROM_PLAYLIST':
 			return state.filter(play =>
 				play.status === 'PLAY'
 			)
+			
 		case 'SORT':
-			newState = state.slice();
-			newState.splice(action.newIndex, 0, newState.splice(action.oldIndex, 1)[0]);
+			let newState = state.slice();
+			let targetIndex = newState.findIndex(x => x.id === action.targetId);
+			let draggedIndex = newState.findIndex(x => x.id === action.draggedId);
+			newState.splice(targetIndex, 0, newState.splice(draggedIndex, 1)[0]);
 			return newState;
+			
 		case 'PLAY':
-			state.forEach((play) => {
+			return state.map((play) => {
 				if(play.id === action.id && play.status !== 'PLAY') {
-					play.status = 'PLAY';
+					return {
+						...play, ...{status : 'PLAY'}
+					}
 				}
-				else if(play.status === 'PLAY') {
-					play.status = '';
+				if(play.id === action.id && play.status === 'PLAY') {
+					return {
+						...play, ...{status : ''}
+					}
 				}
-				newState.push(play);
-			});
-			return newState
+				return play
+			})
+		
 		case 'NEXT':
 			let next = false;
-			state.forEach((play, index) => {
+			return state.map((play) => {
 				if(next) {
-					play.status = 'PLAY';
 					next = false;
+					return {
+						...play, ...{status : 'PLAY'}
+					}
 				}
-				else if(play.status === 'PLAY') {
-					play.status = '';
+				if(play.status === 'PLAY') {
 					next = true;
+					return {
+						...play, ...{status : ''}
+					}
 				}
-				newState.push(play);
-			});
-			return newState
+				return play
+			})
 		default:
 			return state
 	}

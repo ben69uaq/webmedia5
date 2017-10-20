@@ -35,11 +35,14 @@ export default class Player extends Component {
 	}
 	
 	componentWillReceiveProps(nextProps) {
-		if(nextProps.play.status === 'PLAY' && this.audioElement.paused) {
+		//console.log('status : ' + nextProps.play.status + ' - paused : ' + this.audioElement.paused);
+		if(nextProps.play.status === 'PLAY') {
+			//console.log('-- PLAY : '+this.props.play.path);
 			this.audioElement.play();
 		}
 		if(nextProps.play.status !== 'PLAY' && !this.audioElement.paused) {
 			this.audioElement.pause();
+			//console.log('-- PAUSE : ' + this.props.play.path);
 		}
 	}
 	
