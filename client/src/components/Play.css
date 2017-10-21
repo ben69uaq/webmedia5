@@ -1,33 +1,21 @@
 /*
  * Play
  */
-.Play.active{
-	
-}
 .Play .left{
 	float: left;
 }
 .Play .center {
 	height: 40px;
-	margin-left: 46px;
 	margin-right: 26px;
 	overflow: hidden;
 }
 .Play .right {
 	float: right;
 }
-
-/*
- * Center
- */
 .Play .info {
 	margin: 4px 7px 0 7px;
 	cursor: grab;
 }
-
-/*
- * Right
- */
 .Play .button.button_settings {
 	margin-top: 4px;
 }

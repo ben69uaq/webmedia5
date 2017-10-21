@@ -26,7 +26,6 @@
 	width: 0;
 	height: 100%;
 	border-radius: 3px;
-	background-color: red;
 }
 .Player .player_bar .player_cursor_main {
 	position: absolute;
@@ -36,7 +35,6 @@
 	left: -6px;
 	opacity: 0;
 	border-radius: 6.5px;
-	background-color: red;
 	box-shadow: 0 0 2px rgba(0,0,0,0.3);
 }
 .Player:hover .player_bar  .player_cursor_main {

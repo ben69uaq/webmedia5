@@ -14,10 +14,6 @@
 	overflow: hidden;
 	cursor: pointer;
 }
-.Folder .item.active {
-	color: white;
-	background-color: red;
-}
 
 /*
  * Levels

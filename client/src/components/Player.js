@@ -20,12 +20,12 @@ export default class Player extends Component {
 					<div className='player_bar_container'>
 						<div className='player_bar_total'>
 							<div
-								className='player_bar_progress'
+								className='player_bar_progress dark'
 								ref={(div) => { this.progressBar = div; }}
 							></div>
 						</div>
 						<div
-							className='player_cursor_main'
+							className='player_cursor_main dark'
 							ref={(div) => { this.mainCursor = div; }}
 						></div>
 					</div>

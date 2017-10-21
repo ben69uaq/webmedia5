@@ -11,7 +11,7 @@ export default class Folder extends Component {
 					<div className='arrow'></div>
 				}
 				<div 
-					className={'item' + (this.props.isActive?' active':'')}
+					className={'item light' + (this.props.isActive?' active':'')}
 					onClick={this.handlePathChange.bind(this)}
 				>
 					<span>{splittedPath.pop()}</span>

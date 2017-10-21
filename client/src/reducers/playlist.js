@@ -20,23 +20,27 @@ const playlist = (state = [], action) => {
 				play.status === 'PLAY'
 			)
 			
-		case 'SORT':
-			let newState = state.slice();
-			let targetIndex = newState.findIndex(x => x.id === action.targetId);
-			let draggedIndex = newState.findIndex(x => x.id === action.draggedId);
-			newState.splice(targetIndex, 0, newState.splice(draggedIndex, 1)[0]);
-			return newState;
+		case 'SORT':			
+			return state.map((play) => {
+				if (play.id === action.draggedPlay.id) {
+					return action.targetPlay;
+				}
+				if (play.id === action.targetPlay.id) {
+					return action.draggedPlay;
+				}
+				return play;
+			})
 			
 		case 'PLAY':
 			return state.map((play) => {
 				if(play.id === action.id && play.status !== 'PLAY') {
 					return {
-						...play, ...{status : 'PLAY'}
+						...play, status : 'PLAY'
 					}
 				}
-				if(play.id === action.id && play.status === 'PLAY') {
+				if(play.status === 'PLAY') {
 					return {
-						...play, ...{status : ''}
+						...play, status : ''
 					}
 				}
 				return play
@@ -48,13 +52,13 @@ const playlist = (state = [], action) => {
 				if(next) {
 					next = false;
 					return {
-						...play, ...{status : 'PLAY'}
+						...play, status : 'PLAY'
 					}
 				}
 				if(play.status === 'PLAY') {
 					next = true;
 					return {
-						...play, ...{status : ''}
+						...play, status : ''
 					}
 				}
 				return play

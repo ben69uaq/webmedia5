@@ -11,7 +11,7 @@ export default class Music extends Component {
 				onClick={this.handleAddToPlaylist}
 			>
 				<div className='right'>
-					<div className='button small red button_add'></div>
+					<div className='button dark button_add'></div>
 				</div>
 				<div className='center'>
 					<div className='info'>

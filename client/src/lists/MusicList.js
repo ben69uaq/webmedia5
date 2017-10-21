@@ -6,7 +6,12 @@ export default class MusicList extends Component {
 		return (
 			<div className='MusicList col'>
 				<div className='header'>
-					<div className='button horizontal big white button_add_all'
+					<div 
+						className='button big light button_add_all'
+						onClick={this.handleAddAll}
+					></div>
+					<div 
+						className='button big light button_hide_panel'
 						onClick={this.handleAddAll}
 					></div>
 				</div>
@@ -29,5 +34,9 @@ export default class MusicList extends Component {
 		this.props.musicList.forEach((music) =>
 			this.props.actions.addToPlaylist(music)
 		)
+	}
+	
+	handleHidePanel = () => {
+		
 	}
 }

@@ -7,24 +7,25 @@ export default class Play extends Component {
 		var splittedName = this.props.play.path.split('/').pop().split('.')[0].split('-');
 		return (
 			<div
-				className='Play item'
+				className='Play item light'
 				draggable='true'
 				onDragStart={this.handleDragStart}
-				//onDragEnd={this.handleDragEnd}
+				onDragEnd={this.handleDragEnd}
 				onDragEnter={this.handleDragEnter}
-				//onDrag={this.handleDrag}
+				ref={(div) => {this.playElement = div}}
 			>
 				<div className='left'>
-					<div className={'button big red ' + (this.props.play.status==='PLAY'?'button_pause':'button_play')}
+					<div 
+						className={'button dark big ' + (this.props.play.status==='PLAY'?'button_pause':'button_play')}
 						onClick={this.handleClickPlay}
 					></div>
 				</div>
 				{this.props.play.status !== 'PLAY' &&
 					<div className='right'>
-						<div className='button small red button_close'
+						<div className='button dark button_close'
 							onClick={this.handleClickRemove}
 						></div>
-						<div className='button small red button_settings'
+						<div className='button dark button_settings'
 							onClick={this.handleClickSettings}
 						></div>
 					</div>
@@ -56,14 +57,19 @@ export default class Play extends Component {
 	}
 	
 	handleDragStart = (e) => {
-		window.draggedId = this.props.play.id;
-		e.dataTransfer.setData('id','');
+		window.draggedPlay = this.props.play;
+		this.playElement.classList.add('active');
+		e.dataTransfer.setData('text',''); // For IE and FF compatibility
+	}
+	
+	handleDragEnd = () => {
+		delete window.draggedPlay;
+		this.playElement.classList.remove('active');
 	}
 	
 	handleDragEnter = () => {
-		if (window.draggedId !== this.props.play.id) {
-			console.log('dragenter : ' + window.draggedId + ' - ' + this.props.play.id);
-			this.props.actions.sort( window.draggedId, this.props.play.id );
+		if (window.draggedPlay.id !== this.props.play.id) {
+			this.props.actions.sort( window.draggedPlay, this.props.play );
 		}
 	}
 }

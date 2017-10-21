@@ -6,15 +6,13 @@ export default class PlayList extends Component {
 		return (
 			<div className='PlayList col'>
 				<div className='header'>
-					<div className='button horizontal big white button_remove_all'
+					<div
+						className='button big light button_remove_all'
 						onClick={this.handleClickRemoveAll}
 					></div>
 				</div>
 				<div className='body'>
-					<div 
-						className='container'
-						ref={(div) => {this.scrollElement = div}}
-					>
+					<div className='container'>
 						{(this.props.playlist).map((play) =>
 							<Play
 								key={play.id}
