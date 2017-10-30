@@ -18,7 +18,6 @@ export default class PlayList extends Component {
 								key={play.id}
 								play={play}
 								scrollElement={this.scrollElement}
-								playCount={this.props.playlist.length}
 								actions={this.props.actions}
 								api={this.props.api}
 							/>

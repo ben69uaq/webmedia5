@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import Player from './Player'
 import './Play.css'
 
-export default class Play extends Component {	
+export default class Play extends PureComponent {
 	render() {
 		var splittedName = this.props.play.path.split('/').pop().split('.')[0].split('-');
 		return (

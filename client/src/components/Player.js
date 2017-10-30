@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import './Player.css'
 
-export default class Player extends Component {	
+export default class Player extends Component {
 	render() {
+		console.log('render PLAYER');
 		return (
 			<div className='Player'>
 				<audio 
@@ -10,11 +11,14 @@ export default class Player extends Component {
 					src={this.props.api + this.props.play.path}
 					onTimeUpdate={this.handleTimeUpdate}
 					onEnded={this.handleEnded}
+					onPlay={this.handlePlay}
+					onPause={this.handlePause}
 					ref={(audio) => {this.audioElement = audio}}
 				>
 					<source type='audio/mp3' />
 				</audio>
-				<div className='player_bar'
+				<div 
+					className='player_bar'
 					onClick={this.handleClickBar}
 				>
 					<div className='player_bar_container'>
@@ -34,16 +38,22 @@ export default class Player extends Component {
 		);
 	}
 	
-	componentWillReceiveProps(nextProps) {
-		//console.log('status : ' + nextProps.play.status + ' - paused : ' + this.audioElement.paused);
+	shouldComponentUpdate(nextProps, nextState) {
 		if(nextProps.play.status === 'PLAY') {
-			//console.log('-- PLAY : '+this.props.play.path);
 			this.audioElement.play();
 		}
 		if(nextProps.play.status !== 'PLAY' && !this.audioElement.paused) {
-			this.audioElement.pause();
-			//console.log('-- PAUSE : ' + this.props.play.path);
+			console.log('-- PAUSE : ' + this.props.play.path);
 		}
+		return false;
+	}
+	
+	handlePlay = () => {
+		console.log("   ++ PLAY");
+	}
+	
+	handlePause = () => {
+		console.log("   ++ PAUSE");
 	}
 	
 	handleEnded = () => {
