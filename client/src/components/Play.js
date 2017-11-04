@@ -4,6 +4,7 @@ import './Play.css'
 
 export default class Play extends PureComponent {
 	render() {
+		console.log('render PLAY: '+this.props.play.path);
 		var splittedName = this.props.play.path.split('/').pop().split('.')[0].split('-');
 		return (
 			<div
@@ -58,6 +59,7 @@ export default class Play extends PureComponent {
 	
 	handleDragStart = (e) => {
 		window.draggedPlay = this.props.play;
+		console.log("DRAGSTART EVENT: "+this.props.play.id);	
 		this.playElement.classList.add('active');
 		e.dataTransfer.setData('text',''); // For IE and FF compatibility
 	}
@@ -69,6 +71,7 @@ export default class Play extends PureComponent {
 	
 	handleDragEnter = () => {
 		if (window.draggedPlay.id !== this.props.play.id) {
+			console.log("DRAGENTER EVENT: "+window.draggedPlay.id+" | "+this.props.play.id);
 			this.props.actions.sort( window.draggedPlay, this.props.play );
 		}
 	}

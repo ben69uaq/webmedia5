@@ -3,7 +3,7 @@ import './Player.css'
 
 export default class Player extends Component {
 	render() {
-		console.log('render PLAYER');
+		console.log('render PLAYER: '+this.props.play.path);
 		return (
 			<div className='Player'>
 				<audio 
@@ -39,11 +39,13 @@ export default class Player extends Component {
 	}
 	
 	shouldComponentUpdate(nextProps, nextState) {
-		if(nextProps.play.status === 'PLAY') {
+		if(nextProps.play.status === 'PLAY' && this.audioElement.paused) {
+			console.log("   +++++++ PLAY");
 			this.audioElement.play();
 		}
 		if(nextProps.play.status !== 'PLAY' && !this.audioElement.paused) {
-			console.log('-- PAUSE : ' + this.props.play.path);
+			console.log("   +++++++ PAUSE");
+			this.audioElement.pause();
 		}
 		return false;
 	}

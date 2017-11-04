@@ -20,7 +20,8 @@ const playlist = (state = [], action) => {
 				play.status === 'PLAY'
 			)
 			
-		case 'SORT':			
+		case 'SORT':
+			console.log("SORT: "+action.draggedPlay.id+" | "+action.targetPlay.id);
 			return state.map((play) => {
 				if (play.id === action.draggedPlay.id) {
 					return action.targetPlay;

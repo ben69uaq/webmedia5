@@ -3,6 +3,7 @@ import Play from '../components/Play'
 
 export default class PlayList extends Component {	
 	render() {
+		window.ACTIONS = this.props.actions;
 		return (
 			<div className='PlayList col'>
 				<div className='header'>
